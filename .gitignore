@@ -1,0 +1,10 @@
+# Seus dados: senhas, tokens e as suas palavras. Ficam só no seu computador e no servidor.
+site/config.php
+site/regras.php
+
+# Pacote gerado para subir na hospedagem
+*.zip
+
+# Sistema
+.DS_Store
+Thumbs.db

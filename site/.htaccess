@@ -1,0 +1,12 @@
+Options -Indexes
+DirectoryIndex index.php index.html
+RewriteEngine On
+
+# Sempre HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Arquivos internos não abrem pelo navegador
+RewriteRule ^(config|config\.exemplo|lib|regras|regras\.exemplo|fluxo|paginas)\.php$ - [F,L]
+RewriteRule ^banco\.sql$ - [F,L]
+RewriteRule ^cron/ - [F,L]
