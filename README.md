@@ -1,7 +1,16 @@
 # Auto Direct do Instagram
 
+![Auto Direct do Instagram](docs/capa.png)
+
+**Português** · [English](README.en.md)
+
 Alguém comenta uma palavra no seu post e recebe o material no Direct, sozinho. Sem mensalidade de ferramenta:
 roda na hospedagem que você já tem, com a API oficial da Meta.
+
+> **Antes de começar:** cada pessoa cria o próprio app na Meta. A documentação da Meta diz que receber comentário
+> de qualquer pessoa precisa de "acesso avançado", que passa pela análise do app. No teste do autor, só publicar o
+> app bastou, mas isso pode variar de conta para conta. Se o comentário de terceiros não chegar, é preciso pedir a
+> análise (detalhes no [passo 9 da instalação](INSTALACAO.md#9-publicar-o-app)).
 
 ## O que faz
 
@@ -12,9 +21,17 @@ roda na hospedagem que você já tem, com a API oficial da Meta.
 5. Preencheu: o material abre, chega no Direct e no e-mail, e você recebe um aviso de lead novo.
 6. Quem parou no meio recebe um lembrete único perto de 24 horas depois.
 
-Também tem: a mesma palavra mandada direto no Direct (bom para Stories), página de leads com planilha e botão
-"Chamar no WhatsApp", funil por post, resposta a comentários antigos, versão em inglês para quem comenta de fora,
-Página do Facebook pelo Messenger (opcional) e exclusão de dados automática pelo Direct.
+Também tem:
+
+- a mesma palavra mandada direto no Direct (bom para Stories)
+- página de leads com planilha e botão "Chamar no WhatsApp"
+- funil por post: quantos comentaram, tocaram no botão, receberam o link e preencheram
+- resposta a comentários antigos, de antes da instalação
+- versão em inglês para quem comenta de fora
+- Página do Facebook pelo Messenger (opcional)
+- política de privacidade, termos e exclusão de dados prontos, que a Meta exige
+- exclusão de dados automática pelo Direct
+- instalação guiada pelo Claude Code
 
 ## Do que precisa
 
@@ -25,6 +42,8 @@ Página do Facebook pelo Messenger (opcional) e exclusão de dados automática p
 | Hospedagem com PHP 8, MySQL e tarefas agendadas (cron) | a que você já paga |
 | Um subdomínio com HTTPS (ex.: `ig.seudominio.com`) | 0 |
 | Serviço de e-mail para os avisos (Brevo, plano gratuito) | 0 |
+
+Testado no PHP 8.1 e 8.4. A primeira instalação leva de 1 a 2 horas, a maior parte no painel da Meta.
 
 ## Instalar
 
@@ -37,6 +56,21 @@ Página do Facebook pelo Messenger (opcional) e exclusão de dados automática p
 Ele pergunta o seu @, o domínio e as palavras, monta os seus arquivos e te guia em cada tela da Meta e da hospedagem.
 
 **Sem o Claude Code:** siga o [INSTALACAO.md](INSTALACAO.md), passo a passo.
+
+## Este projeto ou uma ferramenta paga?
+
+| | Auto Direct (este) | Ferramenta paga de automação |
+|---|---|---|
+| Mensalidade | nenhuma | cobra por mês, em geral por número de contatos |
+| Onde roda | na sua hospedagem | no servidor da empresa |
+| Seus leads | no seu banco de dados | na plataforma deles |
+| Confere se segue antes de mandar | sim | depende do plano |
+| Formulário com e-mail e WhatsApp | sim | depende do plano |
+| Instalação | 1 a 2 horas, com painel da Meta | minutos, o app deles já é aprovado |
+| Editor visual de fluxo | não, as regras ficam num arquivo | sim |
+
+Se você não quer mexer em hospedagem nem no painel da Meta, uma ferramenta paga é o caminho mais curto.
+Este projeto é para quem prefere não ter mensalidade e ficar com os próprios dados.
 
 ## Os seus dados ficam com você
 
