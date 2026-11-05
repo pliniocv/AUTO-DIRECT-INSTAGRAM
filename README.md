@@ -74,6 +74,12 @@ Ele pergunta o seu @, o domínio e as palavras, monta os seus arquivos e te guia
 Se você não quer mexer em hospedagem nem no painel da Meta, uma ferramenta paga é o caminho mais curto.
 Este projeto é para quem prefere não ter mensalidade e ficar com os próprios dados.
 
+**Precisa de bem mais que isso?** O [ChatbotX](https://github.com/ChatbotXIO/ChatbotX) também é de código aberto e
+faz muito mais: WhatsApp, TikTok, Telegram e outros canais, editor visual de fluxo, agentes de IA, caixa de entrada
+para equipe e disparos. Em troca, pede um servidor próprio com Docker, PostgreSQL e Redis (não roda em hospedagem
+compartilhada) e parte dos recursos exige assinatura. Este aqui faz uma coisa só, roda em hospedagem comum e é
+pensado para quem não é programador.
+
 ### Os seus dados ficam com você
 
 - Cada pessoa cria o **próprio** app na Meta e roda o sistema na **própria** hospedagem. Ninguém mais vê os seus leads,
@@ -169,6 +175,12 @@ The texts people see (comment reply, DMs, form) are yours to write in `site/regr
 
 If you do not want to touch hosting or Meta's dashboard, a paid tool is the shorter path.
 This project is for people who prefer no monthly fee and keeping their own data.
+
+**Need a lot more than this?** [ChatbotX](https://github.com/ChatbotXIO/ChatbotX) is also open source and does much
+more: WhatsApp, TikTok, Telegram and other channels, a visual flow builder, AI agents, a team inbox and broadcasts.
+In return, it needs your own server with Docker, PostgreSQL and Redis (it does not run on shared hosting), and some
+features require a subscription. This one does a single thing, runs on regular hosting and is made for people who
+are not developers.
 
 ### Your data stays with you
 
