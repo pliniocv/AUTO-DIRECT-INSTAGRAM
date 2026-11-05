@@ -2,7 +2,9 @@
 
 ![Auto Direct do Instagram](docs/capa.png)
 
-**Português** · [English](README.en.md)
+**[Português](#português)** · **[English](#english)**
+
+## Português
 
 Alguém comenta uma palavra no seu post e recebe o material no Direct, sozinho. Sem mensalidade de ferramenta:
 roda na hospedagem que você já tem, com a API oficial da Meta.
@@ -12,7 +14,7 @@ roda na hospedagem que você já tem, com a API oficial da Meta.
 > app bastou, mas isso pode variar de conta para conta. Se o comentário de terceiros não chegar, é preciso pedir a
 > análise (detalhes no [passo 9 da instalação](INSTALACAO.md#9-publicar-o-app)).
 
-## O que faz
+### O que faz
 
 1. A pessoa comenta uma palavra (ex.: GUIA) num post.
 2. O sistema responde no comentário ("Te mandei no Direct!") e manda um Direct com um botão.
@@ -33,7 +35,7 @@ Também tem:
 - exclusão de dados automática pelo Direct
 - instalação guiada pelo Claude Code
 
-## Do que precisa
+### Do que precisa
 
 | Peça | Custo |
 |---|---|
@@ -45,7 +47,7 @@ Também tem:
 
 Testado no PHP 8.1 e 8.4. A primeira instalação leva de 1 a 2 horas, a maior parte no painel da Meta.
 
-## Instalar
+### Instalar
 
 **Com o Claude Code (mais fácil):** baixe este repositório, abra a pasta no Claude Code e digite:
 
@@ -57,7 +59,7 @@ Ele pergunta o seu @, o domínio e as palavras, monta os seus arquivos e te guia
 
 **Sem o Claude Code:** siga o [INSTALACAO.md](INSTALACAO.md), passo a passo.
 
-## Este projeto ou uma ferramenta paga?
+### Este projeto ou uma ferramenta paga?
 
 | | Auto Direct (este) | Ferramenta paga de automação |
 |---|---|---|
@@ -72,7 +74,7 @@ Ele pergunta o seu @, o domínio e as palavras, monta os seus arquivos e te guia
 Se você não quer mexer em hospedagem nem no painel da Meta, uma ferramenta paga é o caminho mais curto.
 Este projeto é para quem prefere não ter mensalidade e ficar com os próprios dados.
 
-## Os seus dados ficam com você
+### Os seus dados ficam com você
 
 - Cada pessoa cria o **próprio** app na Meta e roda o sistema na **própria** hospedagem. Ninguém mais vê os seus leads,
   nem o autor deste projeto.
@@ -80,15 +82,112 @@ Este projeto é para quem prefere não ter mensalidade e ficar com os próprios 
   não sobem para o GitHub se você fizer um fork.
 - Nunca cole o conteúdo do `config.php` em conversa nenhuma, nem com o Claude. Preencha direto no arquivo.
 
-## O que a API da Meta não deixa
+### O que a API da Meta não deixa
 
 - Mandar mensagem para quem só começou a seguir, sem interagir.
 - Começar conversa: só dá para responder a um comentário (uma vez, até 7 dias depois) ou a quem escreveu (até 24 horas).
 - Comentário que abre Direct no TikTok.
 
-## Aviso
+### Aviso
 
 Projeto independente, sem ligação com a Meta, o Instagram ou qualquer ferramenta comercial de automação.
 Use dentro das regras da plataforma. Sem garantia: a Meta muda a API de tempos em tempos.
 
 Licença MIT. Feito por [Plinio Ventavoli](https://instagram.com/plinioventavoli).
+
+---
+
+## English
+
+Someone comments a keyword on your post and gets your material in their DMs, automatically. No monthly tool fee:
+it runs on the hosting you already pay for, using Meta's official API.
+
+> **Before you start:** every user creates their own Meta app. Meta's documentation says that receiving comments
+> from anyone requires "advanced access", which goes through App Review. In the author's test, publishing the app
+> was enough, but this may vary from account to account. If comments from other people do not arrive, you will need
+> to request App Review (see [step 9 of the install guide](INSTALACAO.md#9-publicar-o-app), in Portuguese).
+
+### What it does
+
+1. Someone comments a keyword (e.g. GUIDE) on a post.
+2. The system replies to the comment ("Sent it to your DMs!") and sends a DM with a button.
+3. The person taps the button. The system checks whether they follow you; if not, it asks them to follow first.
+4. Followers get a link to a short form (name, email and WhatsApp).
+5. Once they fill it in, the material opens, arrives by DM and email, and you get a new lead alert.
+6. Anyone who stops halfway gets a single reminder about 24 hours later.
+
+It also includes:
+
+- the same keyword sent straight to the DMs (good for Stories)
+- a leads page with spreadsheet export and a "Message on WhatsApp" button
+- a funnel per post: how many commented, tapped the button, got the link and filled in the form
+- replies to old comments, from before installation
+- an English version of the flow for people who comment from abroad
+- Facebook Page support through Messenger (optional)
+- ready-made privacy policy, terms and data deletion pages, which Meta requires
+- automatic data deletion through the DMs
+- guided installation with Claude Code
+
+### What you need
+
+| Item | Cost |
+|---|---|
+| Professional Instagram account (business or creator) | 0 |
+| Meta developer account (developers.facebook.com) | 0 |
+| Hosting with PHP 8, MySQL and scheduled tasks (cron) | the one you already pay for |
+| A subdomain with HTTPS (e.g. `ig.yourdomain.com`) | 0 |
+| Email service for the alerts (Brevo, free plan) | 0 |
+
+Tested on PHP 8.1 and 8.4. The first installation takes 1 to 2 hours, mostly in Meta's dashboard.
+
+### Install
+
+**With Claude Code (easiest):** download this repository, open the folder in Claude Code and type:
+
+```
+/instalar-auto-direct
+```
+
+It asks for your handle, your domain and your keywords, builds your files and guides you through every Meta and
+hosting screen. The guide is in Portuguese; you can ask Claude Code to walk you through it in English.
+
+**Without Claude Code:** follow [INSTALACAO.md](INSTALACAO.md), step by step (in Portuguese).
+
+The texts people see (comment reply, DMs, form) are yours to write in `site/regras.php`, in any language.
+
+### This project or a paid tool?
+
+| | Auto Direct (this) | Paid automation tool |
+|---|---|---|
+| Monthly fee | none | monthly, usually by number of contacts |
+| Where it runs | on your hosting | on the company's servers |
+| Your leads | in your own database | on their platform |
+| Checks follow before sending | yes | depends on the plan |
+| Form with email and WhatsApp | yes | depends on the plan |
+| Setup | 1 to 2 hours, including Meta's dashboard | minutes, their app is already approved |
+| Visual flow builder | no, rules live in a file | yes |
+
+If you do not want to touch hosting or Meta's dashboard, a paid tool is the shorter path.
+This project is for people who prefer no monthly fee and keeping their own data.
+
+### Your data stays with you
+
+- Each user creates their **own** Meta app and runs the system on their **own** hosting. Nobody else sees your
+  leads, not even the author of this project.
+- Passwords live in `site/config.php` and your keywords in `site/regras.php`. Both are in `.gitignore`, so they do
+  not get pushed to GitHub if you fork.
+- Never paste the contents of `config.php` into any chat, including with Claude. Fill it in directly in the file.
+
+### What Meta's API does not allow
+
+- Messaging someone who only followed you, without interacting.
+- Starting a conversation: you can only reply to a comment (once, within 7 days) or to someone who wrote to you
+  (within 24 hours).
+- Comment-to-DM on TikTok.
+
+### Disclaimer
+
+Independent project, not affiliated with Meta, Instagram or any commercial automation tool.
+Use it within the platform's rules. No warranty: Meta changes its API from time to time.
+
+MIT License. Made by [Plinio Ventavoli](https://instagram.com/plinioventavoli).
